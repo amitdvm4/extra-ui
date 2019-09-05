@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demonstrating drag and drop</title>
+	<style type="text/css">
+		.container{
+			border:1px solid;
+			margin:10px auto;
+			width:150px;
+			height:150px;
+		}
+		img{
+			width:90px;
+			height:90px;
+		}
+	</style>
+</head>
+<body>
+<div class="container" ondrop="drop(event)" ondragover="dragover(event)"></div>
+<img id="pro-1" ondragstart="dragstart(event)" src="https://media.gq.com/photos/5b2a723e525bfc1dee1a676a/master/w_1280%2Cc_limit/molding-paste.jpg">
+<img id="pro-2" ondragstart="dragstart(event)" src="https://elcopcb.online/photos/product/4/176/4.jpg">
+
+<script type="text/javascript">
+
+function dragover(event){
+	event.preventDefault();
+}
+var src='';
+function dragstart(event){
+	var element=event.target;
+	src=element.getAttribute("src");
+	//id="#"+id;
+	console.log(src);
+	console.log("drag start");
+//alert("hello");
+} 
+function drop(event){
+	if(src==''){
+		return;
+	}
+	var container=event.target;
+	var imgtag=document.createElement("img");
+	imgtag.setAttribute("src",src);
+	container.appendChild(imgtag);
+	console.log("drop is getting fired");
+}
+</script>
+</body>
+</html>

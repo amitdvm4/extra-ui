@@ -1,0 +1,42 @@
+<p>
+uid:<input/>
+</p>
+<p>
+rno:<input/>
+</p>
+<p>
+email:<input/>
+</p>
+<p>
+password:<input/>
+</p>
+<p>
+phone:<input/>
+</p>
+<p>
+    <input type="button" value="stu" , onclick = "fnstu()"/>
+</p>
+<script>
+    function fnstu()
+    {
+    // take ref
+
+    var uidRef= document.querySelector('p:nth-child(1)>input');                  
+    var rnoRef= document.querySelector('p:nth-child(2)>input'); 
+    var emailRef= document.querySelector('p:nth-child(3)>input');
+    var passwordRef= document.querySelector('p:nth-child(4)>input');
+    var phoneRef= document.querySelector('p:nth-child(5)>input');
+    // take values
+    var uid=uidRef.values;
+    var rno=rnoRef.values;
+    var email=emailRef.values;
+    var password=passwordRef.values;
+    var phone=phoneRef.values;
+    //validations
+    if (uid=='' ||rno==''||email==''||password==''||phone==''){
+        alert('please enter validations data');
+     return;
+    }
+    }
+</script>
+

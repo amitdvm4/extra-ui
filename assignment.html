@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demonstrating drag and drop</title>
+	<style type="text/css">
+		.container{
+			border:1px solid;
+			margin-left:10px;
+			width:250px;
+			height:250px;
+			float:left;
+			text-align:center;
+		}
+		
+		img{
+
+			width:90px;
+			height:90px;
+			
+
+		}
+	</style>
+</head>
+<body>
+<div class="container" id="con1" ondrop="drop(event)" ondragover="dragover(event)">male</div>
+
+<div class="container" id="con2" ondrop="drop(event)" ondragover="dragover(event)">female</div>
+
+<div class="container" id="con3" ondrop="drop(event)" ondragover="dragover(event)">kids</div>
+<div id="#pro">
+<img name="male" id="pro-2" ondragstart="dragstart(event)" src="https://www.dhresource.com/0x0s/f2-albu-g6-M01-0C-F8-rBVaSFu1viCAC01oAAG1XLITxmE551.jpg/hitachi-logo-famous-brand-japan-men-white.jpg">
+<img name="male" id="pro-1" ondragstart="dragstart(event)" src="http://assets.myntassets.com/assets/images/2471500/2018/2/9/11518159758071-FIDO-DIDO-Men-Tshirts-9591518159757862-1.jpg">
+</div>
+<script type="text/javascript">
+
+function dragover(event){
+	event.preventDefault();
+}
+var id;
+function dragstart(event){
+	var element=event.target;
+	id=element.getAttribute("id");
+	id="#"+id;
+	console.log(id);
+	console.log("drag start");
+	if(name=="male" ){
+	 	draggable="true"
+	 }else{
+	 	alert("you can not drag here");
+	 }
+
+} 
+function drop(event){
+	var container=event.target;
+	var imgtag=document.querySelector(id);
+	container.appendChild(imgtag);
+	console.log("drop is getting fired");
+}
+</script>
+</body>
+</html>
